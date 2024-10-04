@@ -1,0 +1,147 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.header{
+    width: 100%;
+    display: flex;
+    padding: 20px 0 20px 0;
+    flex-direction:row;
+    background-color: #f5f6fa;
+    font-family: "Poppins", sans-serif;
+}
+.title{
+    width: 35%;
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    gap: 20px;
+    text-decoration: none;
+    padding-left: 25px;
+}
+.title img{
+    width: 64px;
+    height: 64px;
+}
+.title a{
+    text-decoration: none;
+    letter-spacing: 3;
+    font-weight: 900;
+    color: #30336b;
+}
+.nav-menu{
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+.nav-menu a{
+    text-decoration: none;
+    color: #130f40;
+    letter-spacing: 1.5;
+    font-weight: 500;
+}
+.nav-menu a:hover{
+    color: #686de0;
+    transform: scale(1.1);
+    transition: 0.2s ease;
+}
+#sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    background-color:#ffffff;
+    padding: 0;
+    color: #010d1a;
+    transition: all 0.3s;
+    z-index: 10;
+  }
+
+  #sidebar.active {
+    right: 0;
+  }
+  #sidebar h3{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+.nav .nav-link {
+    width: 100%;
+    color: #000000;
+    font-size: 18px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  .nav .nav-link:hover{
+    color: #f3f3f7 ;
+    background-color: #070152;
+    transition: all 0.7s;
+
+  }
+
+  /* Overlay background when the sidebar is active */
+  #sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(90, 89, 89, 0.5);
+    z-index: 1040;
+  }
+
+  #sidebar-overlay.active {
+    display: block;
+    z-index: 8;
+  }
+  .menu-button {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 6px;
+    border: none;
+    background-color: #f5f6fa;
+    padding-right: 30px;
+  }
+
+  .menu-button__line,
+  .menu-button::before,
+  .menu-button::after {
+    content: "";
+    width: 34px;
+    height: 5px;
+    background-color: #333333;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .menu-button.is-opened .menu-button__line {
+    opacity: 0;
+  }
+
+  .menu-button.is-opened::before {
+    transform: translateY(11px) rotate(45deg);
+  }
+
+  .menu-button.is-opened::after {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+  @media screen and (max-width:850px) {
+    .nav-menu {
+      display: none;
+    }
+    .menu-button{
+      display: flex;
+    }
+    .title{
+      width: 100%;
+    }
+  }
